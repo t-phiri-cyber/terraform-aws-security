@@ -1,0 +1,26 @@
+
+# Terraform working files
+.terraform/
+.terraform.lock.hcl
+
+# Terraform state and plans
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Local variable values
+*.tfvars
+*.tfvars.json
+
+# Credentials and secrets
+*.pem
+*.key
+.env
+.env.*
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
