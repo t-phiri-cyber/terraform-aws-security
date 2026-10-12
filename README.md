@@ -42,3 +42,83 @@ This repository defines the infrastructure configuration. AWS resources should o
 - Terraform modules and variables
 - S3 security configuration
 - Cloud security fundamentals
+# AWS Secure Storage — Terraform
+
+## Overview
+
+This project demonstrates Infrastructure as Code (IaC) by provisioning an Amazon S3 storage resource using Terraform. It focuses on implementing foundational AWS storage security controls through a reusable Terraform module.
+
+## Security Controls
+
+- **S3 Block Public Access:** Blocks public access to the storage bucket.
+- **Server-Side Encryption:** Configures AES-256 encryption for stored objects.
+- **Bucket Versioning:** Enables versioning to preserve and recover previous object versions.
+- **Modular Architecture:** Separates storage resource configuration into a reusable Terraform module.
+
+## Technologies
+
+- Terraform
+- Amazon Web Services (AWS) — S3
+- HashiCorp Configuration Language (HCL)
+- Git and GitHub
+
+## Project Structure
+
+```text
+terraform-aws-security/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+├── .gitignore
+└── Modules/
+    └── Storage/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
+```
+
+## Prerequisites
+
+- Terraform CLI installed
+- An AWS account
+- AWS credentials configured securely
+- Git installed
+
+## Validation
+
+Run these commands from the project root directory:
+
+```bash
+terraform init
+terraform fmt -recursive
+terraform validate
+```
+
+- `terraform init` initialises Terraform and downloads the required providers.
+- `terraform fmt -recursive` formats Terraform files, including those in subdirectories.
+- `terraform validate` checks the configuration for syntax and internal consistency.
+
+## Deployment
+
+Before deploying, review the resource configuration, confirm the AWS region and bucket name, and verify the AWS credentials and permissions.
+
+To preview infrastructure changes, run:
+
+```bash
+terraform plan
+```
+
+Only deploy resources when you understand the proposed changes and any associated AWS costs. This project does not claim that infrastructure has been deployed to AWS.
+
+## Learning Objectives
+
+- Practise AWS infrastructure provisioning with Terraform.
+- Apply foundational S3 storage security controls.
+- Organise infrastructure code using reusable modules.
+- Use Git and GitHub for source control and project documentation.
+- Validate infrastructure configuration before deployment.
+
+## Disclaimer
+
+This is a learning and portfolio project. The security controls described above should be verified against the Terraform configuration before deployment. Additional controls may be required for production environments, including least-privilege IAM policies, logging, monitoring and appropriate data protection measures.
