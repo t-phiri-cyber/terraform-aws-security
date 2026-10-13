@@ -42,7 +42,7 @@ This repository defines the infrastructure configuration. AWS resources should o
 - Terraform modules and variables
 - S3 security configuration
 - Cloud security fundamentals
-# AWS Secure Storage — Terraform
+
 
 ## Overview
 
@@ -85,6 +85,13 @@ terraform-aws-security/
 - AWS credentials configured securely
 - Git installed
 
+## Security Controls
+
+- **S3 public access blocking:** Blocks public ACLs and public bucket policies.
+- **Server-side encryption:** Configures AES-256 encryption for stored objects.
+- **Bucket versioning:** Enables recovery of previous object versions.
+- **HTTPS-only access:** Denies S3 requests made over insecure transport.
+
 ## Validation
 
 Run these commands from the project root directory:
@@ -111,13 +118,7 @@ terraform plan
 
 Only deploy resources when you understand the proposed changes and any associated AWS costs. This project does not claim that infrastructure has been deployed to AWS.
 
-## Learning Objectives
 
-- Practise AWS infrastructure provisioning with Terraform.
-- Apply foundational S3 storage security controls.
-- Organise infrastructure code using reusable modules.
-- Use Git and GitHub for source control and project documentation.
-- Validate infrastructure configuration before deployment.
 
 ## Disclaimer
 
